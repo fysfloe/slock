@@ -7,7 +7,9 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'components/scripts/*.js'
+          'components/scripts/buffer-loader.js',
+          'components/scripts/audio.js',
+          'components/scripts/speech.js'
         ],
         dest: 'builds/development/js/script.js'
       },

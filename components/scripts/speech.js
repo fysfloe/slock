@@ -4,8 +4,8 @@ var listener = new webspeech.Listener();
 // });
 
 var speaker = new webspeech.Speaker();
-document.getElementById("read").onclick = () => {
+/*document.getElementById("read").onclick = () => {
   console.log('foo');
   speaker.speak("en", document.getElementById("text").value);
 }
-console.log();
+console.log();*/
