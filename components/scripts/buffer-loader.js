@@ -23,8 +23,8 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
           alert('error decoding file data: ' + url);
           return;
         }
-        loader.bufferList[index] = buffer;
-        if (++loader.loadCount == loader.urlList.length)
+        loader.bufferList.push(buffer);
+        if (++loader.loadCount == (loader.urlList.hours.length + loader.urlList.quarters.length))
           loader.onload(loader.bufferList);
       },
       function(error) {
@@ -41,6 +41,11 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
 }
 
 BufferLoader.prototype.load = function() {
-  for (var i = 0; i < this.urlList.length; ++i)
-  this.loadBuffer(this.urlList[i], i);
+    for (var i = 0; i < this.urlList.hours.length; ++i) {
+        this.loadBuffer(this.urlList.hours[i], i);
+    }
+    for (var j = 0; j < this.urlList.quarters.length; ++j) {
+        this.loadBuffer(this.urlList.quarters[j], j);
+    }
+
 }
