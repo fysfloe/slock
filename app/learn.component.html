@@ -1,0 +1,30 @@
+<section>
+    <div class="row">
+        <sl-learn-clock
+            class="col-xs"
+            *ngFor="let clock of clocks"
+            [clock]="clock"
+            (guess)="onClockGuess($event)"
+            (play)="onClockPlay($event)"></sl-learn-clock>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="nav nav-inline">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&lsaquo; Previous</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-default">
+                        Guess
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Next &rsaquo;</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>

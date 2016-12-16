@@ -3,5 +3,7 @@ node_modules
 bower_components
 .tmp
 .sass-cache
-builds/**/img/*
-builds/**/audio/*
+img/*
+audio/*
+app/**/*.js
+app/**/*.js.map

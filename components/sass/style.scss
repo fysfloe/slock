@@ -1,7 +1,23 @@
+@import 'variables';
+
 body, html {
     text-align: center;
+    background: $main-color;
 }
 
-main {
+a {
+    color: $main-dark;
+}
 
+.btn-default {
+    background: darken($main-color, 10%);
+    color: $main-dark;
+    border: 2px solid $main-dark;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active {
+        background: darken($main-color, 15%);
+    }
 }

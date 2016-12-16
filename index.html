@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <base href="/">
+    <title>Slock - Worlds best Sound Clock!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <link href="resets.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/_bower.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link href="css/style.css" rel="stylesheet"></link>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
+</head>
+
+<body>
+    <sl-app id="site">Loading...</sl-app>
+    <script type="text/javascript" src="js/_bower.js"></script>
+    <!--<script type="text/javascript" src="js/script.js"></script>-->
+</body>
+</html>

@@ -11,13 +11,7 @@ module.exports = function(grunt) {
           'components/scripts/audio.js',
           'components/scripts/speech.js'
         ],
-        dest: 'builds/development/js/script.js'
-      },
-      prod: {
-        src: [
-          'components/scripts/*.js'
-        ],
-        dest: 'builds/production/js/script.js'
+        dest: 'js/script.js'
       }
     },
     sass: {
@@ -25,51 +19,32 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded'
         },
-        files: [{
-          src: 'components/sass/style.scss',
-          dest: 'builds/development/css/style.css'
-        }]
-      }
-    },
-    wiredep: {
-      task: {
-        src: 'builds/development/**/*.html'
+        files: [
+            {
+                src: 'components/sass/style.scss',
+                dest: 'css/style.css'
+            }
+        ]
       }
     },
     bower_concat: {
       all: {
         dest: {
-          'js': 'builds/development/js/_bower.js',
-          'css': 'builds/development/css/_bower.css'
-        }
-      }
-    },
-    connect: {
-      server: {
-        options: {
-          hostname: 'localhost',
-          port: 3000,
-          base: 'builds/development/',
-          livereload: true
+          'js': 'js/_bower.js',
+          'css': 'css/_bower.css'
         }
       }
     },
     watch: {
-      options: {
-        spawn: false,
-        livereload: true
-      },
       scripts: {
-        files: ['builds/development/**/*.html', 'components/scripts/**/*.js', 'components/sass/**/*.scss'],
+        files: ['components/scripts/**/*.js', 'components/sass/**/*.scss'],
         tasks: ['concat', 'sass']
       }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-bower-concat');
-  grunt.registerTask('default', ['wiredep', 'bower_concat', 'concat', 'sass', 'connect', 'watch']);
+  grunt.registerTask('default', ['bower_concat', 'concat', 'sass', 'watch']);
 } // wrapper function

@@ -1,0 +1,15 @@
+body, html {
+  text-align: center;
+  background: #F1D130; }
+
+a {
+  color: #685807; }
+
+.btn-default {
+  background: #dfbc0f;
+  color: #685807;
+  border: 2px solid #685807;
+  font-weight: bold;
+  transition: all 0.3s ease; }
+  .btn-default:hover, .btn-default:active {
+    background: #c7a80d; }
