@@ -7,9 +7,16 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'components/scripts/buffer-loader.js',
+          /*'components/scripts/buffer-loader.js',
           'components/scripts/audio.js',
-          'components/scripts/speech.js'
+          'components/scripts/speech.js',*/
+          'node_modules/underscore/underscore-min.js',
+          'node_modules/backbone/backbone-min.js',
+          'components/scripts/models/*',
+          'components/scripts/collections/*',
+          'components/scripts/routes/*',
+          'components/scripts/views/*',
+          'components/scripts/app.js',
         ],
         dest: 'builds/development/js/script.js'
       },
@@ -40,7 +47,11 @@ module.exports = function(grunt) {
       all: {
         dest: {
           'js': 'builds/development/js/_bower.js',
-          'css': 'builds/development/css/_bower.css'
+          'scss': 'components/sass/_bower.scss',
+          'css': 'builds/development/css/_bower.css',
+        },
+        mainFiles: {
+          'bootstrap': 'dist/css/bootstrap.min.css',
         }
       }
     },

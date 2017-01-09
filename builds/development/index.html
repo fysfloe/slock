@@ -11,76 +11,89 @@
   <body>
     <header>
       <div class="container">
-        <h1>This is Slock!</h1>
+        <hgroup>
+          <h1>slock</h1>
+          <p>World's best Sound Clock</p>
+        </hgroup>
       </div>
     </header>
     <main>
       <div class="container">
-        <!--<div class="form-group">
-          <label for="text">Say something!</label>
-          <input type="text" class="form-control" id="text" placeholder="">
-          <p class="help-block">Help text here.</p>
-      </div>-->
+        <nav id="learn-steps">
+        </nav>
         <div class="row">
-            <div class="col-md-12">
-                <!--<button id="read" type="button" class="btn btn-default">
-                  Read
-              </button>-->
-                <button id="random-sound" type="button" class="btn btn-default">
-                  Random Sound
-                </button>
-                <button id="repeat" type="button" class="btn btn-default">
-                  Repeat
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>Your Guess:</h3>
-                <div class="row">
-                    <div class="form-group col-md-4">
-                      <label for="hour">Hour:</label>
-                      <select class="form-control" id="hour" name="hour" placeholder="">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="quarters">Minutes:</label>
-                      <select class="form-control" id="minutes" name="minutes" placeholder="">
-                          <option>00</option>
-                          <option>15</option>
-                          <option>30</option>
-                          <option>45</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="guess">&nbsp;</label>
-                        <button type="button" id="guess" class="form-control btn btn-success">
-                            Guess
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <div id="learn-content" class="col">
 
-      </div>
+          </div>
+        </div>
+        <!--<div class="form-group">
+        <label for="text">Say something!</label>
+        <input type="text" class="form-control" id="text" placeholder="">
+        <p class="help-block">Help text here.</p>
+      </div>-->
     </main>
     <footer>
       <div class="container">
 
       </div>
     </footer>
+
+    <script id="learnStep" type="text/template">
+      <a href="#<%= link %>">
+        <h2><%= name %></h2>
+        <p class="description"><%= description %></p>
+        <div class="bottom">
+          <div class="progress">
+            <div class="progress-bar" style="width: <%= progress %>%"></div>
+          </div>
+          <div class="score">
+            <%= score.user %>/<%= score.possible %>
+          </div>
+        </div>
+      </a>
+    </script>
+
+    <script id="learnSingleStep" type="text/template">
+      <button id="play-sound" type="button" class="btn btn-default">
+        Play Sound
+      </button>
+      <div class="guess">
+        <h3>Your Guess:</h3>
+        <div class="row">
+          <div class="form-group col">
+            <label for="hour">Hour:</label>
+            <input type="number" min="1" max="12" step="1" name="hour" id="hour" class="form-control">
+          </div>
+          <div class="form-group col">
+            <label for="quarters">Minutes:</label>
+            <select class="form-control" id="minutes" name="minutes" placeholder="">
+              <option>00</option>
+              <option>15</option>
+              <option>30</option>
+              <option>45</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <button type="button" id="guess" class="form-control btn btn-default">
+              Guess
+              <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              	 viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                <path class="circ path" style="fill:none;stroke:#fff;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+                	M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                	/>
+                <polyline class="tick path" style="fill:none;stroke:#fff;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                	11.6,20 15.9,24.2 26.4,13.8 "/>
+                <polyline class="cross path" style="fill:none;stroke:#fff;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="10.9,26.4 26.4,10.9"/>
+                <polyline class="cross path" style="fill:none;stroke:#fff;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="10.9,10.9 26.4,26.4 "/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <a href="#" class="single-step-next">Next</a>
+      </div>
+    </script>
 
     <script type="text/javascript" src="js/_bower.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

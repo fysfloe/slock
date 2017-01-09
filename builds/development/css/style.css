@@ -1,2 +1,115 @@
+a {
+  color: #685807; }
+
 body, html {
-  text-align: center; }
+  text-align: center;
+  background: #F1D130; }
+
+header {
+  padding: 2em; }
+  header h1 {
+    display: inline-block;
+    border-bottom: 0.1em solid #685807;
+    padding-bottom: 0.2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+.btn:hover {
+  cursor: pointer; }
+
+.btn-default {
+  background: #dfbc0f;
+  color: #685807;
+  transition: all 0.3s ease; }
+  .btn-default:hover, .btn-default:active {
+    background: #c7a80d; }
+
+#learn-content {
+  display: none;
+  margin: 1em .5em;
+  padding: 1em;
+  background: #fbf1bf;
+  box-shadow: 0 0 1px #af940c; }
+  #learn-content .guess {
+    margin: 2em auto;
+    max-width: 17em; }
+    #learn-content .guess a.single-step-next {
+      display: none; }
+      #learn-content .guess a.single-step-next:after {
+        display: inline-block;
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: .4em solid transparent;
+        border-bottom: .4em solid transparent;
+        border-left: 0.5em solid #685807;
+        margin-left: .2em; }
+    #learn-content .guess button#guess {
+      transition: background-color 0.3s linear; }
+      #learn-content .guess button#guess svg {
+        width: 1.5em;
+        position: absolute;
+        top: 0.45em;
+        right: 1.5em; }
+        #learn-content .guess button#guess svg .circ {
+          opacity: 0;
+          stroke-dasharray: 130;
+          stroke-dashoffset: 130;
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          -ms-transition: all 1s;
+          -o-transition: all 1s;
+          transition: all 1s; }
+      #learn-content .guess button#guess .tick, #learn-content .guess button#guess .cross {
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+        -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+        -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+        transition: stroke-dashoffset 1s 0.5s ease-out; }
+      #learn-content .guess button#guess.btn-success:focus {
+        background-color: #5cb85c;
+        border-color: #5cb85c;
+        color: white;
+        box-shadow: none; }
+      #learn-content .guess button#guess.btn-success .circ, #learn-content .guess button#guess.btn-success .tick {
+        opacity: 1;
+        stroke-dashoffset: 0; }
+      #learn-content .guess button#guess.btn-danger:focus {
+        background-color: #d9534f;
+        border-color: #d9534f;
+        color: white;
+        box-shadow: none; }
+      #learn-content .guess button#guess.btn-danger .circ, #learn-content .guess button#guess.btn-danger .cross {
+        opacity: 1;
+        stroke-dashoffset: 0; }
+      #learn-content .guess button#guess:disabled {
+        opacity: 0.8; }
+
+ul.learn-steps {
+  padding: 0;
+  list-style: none; }
+  ul.learn-steps li.learn-step-item {
+    box-shadow: 0 0 1px #af940c;
+    background: white;
+    margin: 0 .5em;
+    padding: 0; }
+    ul.learn-steps li.learn-step-item a {
+      display: block;
+      min-height: 12em;
+      padding: 1em;
+      position: relative; }
+      ul.learn-steps li.learn-step-item a:hover, ul.learn-steps li.learn-step-item a:active, ul.learn-steps li.learn-step-item a:focus {
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 0 3px #af940c inset; }
+      ul.learn-steps li.learn-step-item a .bottom {
+        position: absolute;
+        bottom: 2em;
+        width: 80%;
+        left: 10%; }
